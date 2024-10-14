@@ -2340,7 +2340,7 @@ textarea.is-invalid {
 }
 .icon-btn {
     display: inline-block;
-    width: var(--btn-size, 100%);
+    width: var(--btn-size, 30%);
     height: var(--btn-size, 56px);
     line-height: var(--btn-size, 56px);
     font-size: var(--btn-font-size, 16px);
