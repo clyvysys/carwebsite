@@ -236,12 +236,23 @@
                 </div>
             </div>
             <form action="" method="POST" class="appointment-form-2 ajax-contact" id="appointment">
-                <div class="title-area mb-40 text-xl-start"><h2 class="sec-title">Make An Appointment</h2></div>
+                <div class="title-area mb-40 text-xl-start">
+                    <h2 class="sec-title">Make An Appointment</h2>
+                </div>
                 <div class="row gx-24">
-                    <div class="form-group col-12"><input type="text" class="form-control" name="name" id="name" placeholder="Enter Your Name" /> <i class="fal fa-user"></i></div>
-                    <div class="form-group col-md-6"><input type="email" class="form-control" name="email" id="email" placeholder="Email Address" /> <i class="fal fa-envelope"></i></div>
+                    <div class="form-group col-12">
+                        <label for="name">Enter Your Name:</label>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Enter Your Name" required />
+                        <i class="fal fa-user"></i>
+                    </div>
                     <div class="form-group col-md-6">
-                        <select name="subject" id="subject" class="form-select nice-select">
+                        <label for="email">Email Address:</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Email Address" required />
+                        <i class="fal fa-envelope"></i>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="subject">Select Subject:</label>
+                        <select name="subject" id="subject" class="form-select nice-select" required>
                             <option value="" disabled="disabled" selected="selected" hidden>Select Subject</option>
                             <option value="Electrical System">Electrical System</option>
                             <option value="Auto Car Repair">Auto Car Repair</option>
@@ -249,13 +260,49 @@
                             <option value="Car & Engine Clean">Car & Engine Clean</option>
                         </select>
                     </div>
-                    <div class="form-group col-md-6"><input type="text" class="date-pick form-control" name="date" id="date-pick" placeholder="Select Date" /> <i class="far fa-calendar"></i></div>
-                    <div class="form-group col-md-6"><input type="text" class="time-pick form-control" name="time" id="time-pick" placeholder="Select Time" /> <i class="fal fa-clock"></i></div>
-                    <div class="form-group col-12"><textarea name="message" id="message" cols="30" rows="3" class="form-control" placeholder="Message"></textarea> <i class="fal fa-comment"></i></div>
-                    <div class="form-btn col-12 mt-10"><button class="th-btn">Get A Quote</button></div>
+            
+                    <div class="form-group col-md-6">
+                        <label for="brand">Select Car Brand:</label>
+                        <select id="brand" name="brand" class="form-select" onchange="updateModels()" required>
+                            <option value="">--Select a Brand--</option>
+                            <option value="Aston Martin">Aston Martin</option>
+                            <option value="Audi">Audi</option>
+                            <option value="Bentley">Bentley</option>
+                            <option value="BMW">BMW</option>
+                            <option value="BYD">BYD</option>
+                            <option value="Chevrolet">Chevrolet</option>
+                            <option value="Citroën">Citroën</option>
+                            <option value="Daewoo">Daewoo</option>
+                            <option value="Datsun">Datsun</option>
+                            <option value="DC">DC</option>
+                            <option value="Ferrari">Ferrari</option>
+                            <option value="Fiat">Fiat</option>
+                            <option value="Force">Force</option>
+                            <option value="Ford">Ford</option>
+                            <!-- Add more brands here... -->
+                        </select>
+                    </div>
+            
+                    <div class="form-group col-md-6">
+                        <label for="model">Select Model:</label>
+                        <select id="model" name="model" class="form-select" required>
+                            <option value="">--Select a Model--</option>
+                        </select>
+                    </div>
+            
+                    <div class="form-group col-12">
+                        <label for="message">Message:</label>
+                        <textarea name="message" id="message" cols="30" rows="3" class="form-control" placeholder="Message" required></textarea>
+                        <i class="fal fa-comment"></i>
+                    </div>
+            
+                    <div class="form-btn col-12 mt-10">
+                        <button class="th-btn" type="submit">Get A Quote</button>
+                    </div>
                 </div>
                 <p class="form-messages mb-0 mt-3"></p>
             </form>
+            
         </section>
         <section class="space">
             <div class="container">
@@ -925,7 +972,7 @@
             }
         </script>
         <!--Start of Tawk.to Script-->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
     var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
@@ -935,7 +982,7 @@
     s1.setAttribute('crossorigin','*');
     s0.parentNode.insertBefore(s1,s0);
     })();
-    </script>
+    </script> -->
     <!--End of Tawk.to Script-->
     
     </body>
