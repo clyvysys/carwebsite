@@ -2153,7 +2153,7 @@ textarea.is-invalid {
     background-color: var(--theme-color);
     color: var(--white-color);
     position: relative;
-    padding: 3px 36px;
+    padding: 17px 36px;
     font-weight: 600;
     font-size: 16px;
     line-height: 26px;
@@ -2340,7 +2340,7 @@ textarea.is-invalid {
 }
 .icon-btn {
     display: inline-block;
-    width: var(--btn-size, 30%);
+    width: var(--btn-size, 56px);
     height: var(--btn-size, 56px);
     line-height: var(--btn-size, 56px);
     font-size: var(--btn-font-size, 16px);
