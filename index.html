@@ -262,24 +262,53 @@
             
                     <div class="form-group col-md-6">
                         <label for="brand">Select Car Brand:</label>
-                        <select id="brand" name="brand" class="form-select" onchange="updateModels()" required>
-                            <option value="">--Select a Brand--</option>
-                            <option value="Aston Martin">Aston Martin</option>
-                            <option value="Audi">Audi</option>
-                            <option value="Bentley">Bentley</option>
-                            <option value="BMW">BMW</option>
-                            <option value="BYD">BYD</option>
-                            <option value="Chevrolet">Chevrolet</option>
-                            <option value="Citrogen">Citrogen </option>
-                            <option value="Daewoo">Daewoo</option>
-                            <option value="Datsun">Datsun</option>
-                            <option value="DC">DC</option>
-                            <option value="Ferrari">Ferrari</option>
-                            <option value="Fiat">Fiat</option>
-                            <option value="Force">Force</option>
-                            <option value="Ford">Ford</option>
-                            <!-- Add more brands here... -->
-                        </select>
+<select id="brand" name="brand" class="form-select" onchange="updateModels()" required>
+    <option value="">--Select a Brand--</option>
+    <option value="Aston Martin">Aston Martin</option>
+    <option value="Audi">Audi</option>
+    <option value="Bentley">Bentley</option>
+    <option value="BMW">BMW</option>
+    <option value="BYD">BYD</option>
+    <option value="Chevrolet">Chevrolet</option>
+    <option value="Citrogen">Citrogen</option>
+    <option value="Daewoo">Daewoo</option>
+    <option value="Datsun">Datsun</option>
+    <option value="DC">DC</option>
+    <option value="Ferrari">Ferrari</option>
+    <option value="Fiat">Fiat</option>
+    <option value="Force">Force</option>
+    <option value="Ford">Ford</option>
+    <option value="HM">HM</option>
+    <option value="Honda">Honda</option>
+    <option value="Hummer">Hummer</option>
+    <option value="Hyundai">Hyundai</option>
+    <option value="Isuzu">Isuzu</option>
+    <option value="Jaguar">Jaguar</option>
+    <option value="Jeep">Jeep</option>
+    <option value="KIA">KIA</option>
+    <option value="Lamborghini">Lamborghini</option>
+    <option value="Land Rover">Land Rover</option>
+    <option value="Lexus">Lexus</option>
+    <option value="Mahindra">Mahindra</option>
+    <option value="Maruti Suzuki">Maruti Suzuki</option>
+    <option value="Maserati">Maserati</option>
+    <option value="Mercedes">Mercedes</option>
+    <option value="MG">MG</option>
+    <option value="Mini">Mini</option>
+    <option value="Mitsubishi">Mitsubishi</option>
+    <option value="Nissan">Nissan</option>
+    <option value="Opel">Opel</option>
+    <option value="Porsche">Porsche</option>
+    <option value="Premier">Premier</option>
+    <option value="Renault">Renault</option>
+    <option value="Rolls-Royce">Rolls-Royce</option>
+    <option value="Skoda">Skoda</option>
+    <option value="Tata">Tata</option>
+    <option value="Toyota">Toyota</option>
+    <option value="Volkswagen">Volkswagen</option>
+    <option value="Volvo">Volvo</option>
+</select>
+
                     </div>
             
                     <div class="form-group col-md-6">
@@ -934,22 +963,51 @@
         <script src="assets/js/main.js"></script>
         <script>
             const carData = {
-                "Aston Martin": ["DBX", "Vantage", "Rapide", "Vanquish", "DB9", "DB11", "DB12"],
-                "Audi": ["Q3", "Q5", "Q7", "A4", "A6", "RS5", "Q8", "A8 L", "RS Q8", "RS5"],
-                "Bently": ["Mulsanne", "Continental", "Flying Spur", "Bentayga"],
-                "BMW": ["XM", "X7", "X1", "X5", "i4", "i7", "M4CS", "7 Series", "2 Series", "M4", "3 Series Gran Limousine", "M340i", "Z4", "M2", "X3", "6 Series", "M8", "iX1", "X4M40i", "iX", "X3M40i", "i5", "New X3"],
-                "BYD": ["SEAL", "ATTO 3", "E6"],
-                "Chevrolet": ["Aveo", "UVA", "BEAT", "CAPTIVA", "CORVETTE", "CRUZE", "ENJOY", "FORESTER", "OPTRA", "OPTRA MAGNUM", "OPTRA SRV", "SAIL", "SILVERADO", "SPARK", "TAVERA", "TRAIL BLAZER", "IMPALA", "CAMARO"],
-                "Citrogen": ["Basalt", "C3", "Aircross", "eC3", "C5 Aircross", "C5"],
-                "Daewoo": ["Cielo", "Matiz", "Nexia"],
-                "Datsun": ["Go", "Go Plus", "redi Go", "Go+"],
-                "DC": ["Avanti"],
-                "Ferrari": ["296 GTB", "SF90", "812", "Roma", "Tributo", "Purosangue SUV", "F8 Tributo", "Portofino"],
-                "Fiat": ["1100", "500", "Avventura", "Avventura Cross", "Punto", "Linea", "Linea classic", "Millicento", "Palio", "Palio D", "Palio NV", "Stile", "Petra", "Petra D", "Premier Padmini", "Abart Punto", "EVO", "Pure", "Siena", "Uno"],
-                "Force": ["Gurkha", "Urbania", "Trax"],
-                "Ford": ["Ford Aspire", "Ford EcoSport", "Ford Endeavour", "Ford Escort", "Ford Falcon", "Ford Fiesta", "Ford Fiesta Classic", "Ford Figo", "Ford Freestyle", "Ford Ikon", "Ford Monde", "Ford Mustang", "raptor", "Fusion"],
-                // Add more brands and models here...
-            };
+    "Aston Martin": ["DBX", "Vantage", "Rapide", "Vanquish", "DB9", "DB11", "DB12"],
+    "Audi": ["Q3", "Q5", "Q7", "A4", "A6", "RS5", "Q8", "A8 L", "RS Q8", "RS5"],
+    "Bently": ["Mulsanne", "Continental", "Flying Spur", "Bentayga"],
+    "BMW": ["XM", "X7", "X1", "X5", "i4", "i7", "M4CS", "7 Series", "2 Series", "M4", "3 Series Gran Limousine", "M340i", "Z4", "M2", "X3", "6 Series", "M8", "iX1", "X4M40i", "iX", "X3M40i", "i5", "New X3"],
+    "BYD": ["SEAL", "ATTO 3", "E6"],
+    "Chevrolet": ["Aveo", "UVA", "BEAT", "CAPTIVA", "CORVETTE", "CRUZE", "ENJOY", "FORESTER", "OPTRA", "OPTRA MAGNUM", "OPTRA SRV", "SAIL", "SILVERADO", "SPARK", "TAVERA", "TRAIL BLAZER", "IMPALA", "CAMARO"],
+    "Citrogen": ["Basalt", "C3", "Aircross", "eC3", "C5 Aircross", "C5"],
+    "Daewoo": ["Cielo", "Matiz", "Nexia"],
+    "Datsun": ["Go", "Go Plus", "redi Go", "Go+"],
+    "DC": ["Avanti"],
+    "Ferrari": ["296 GTB", "SF90", "812", "Roma", "Tributo", "Purosangue SUV", "F8 Tributo", "Portofino"],
+    "Fiat": ["1100", "500", "Avventura", "Avventura Cross", "Punto", "Linea", "Linea classic", "Millicento", "Palio", "Palio D", "Palio NV", "Stile", "Petra", "Petra D", "Premier Padmini", "Abart Punto", "EVO", "Pure", "Siena", "Uno"],
+    "Force": ["Gurkha", "Urbania", "Trax"],
+    "Ford": ["Aspire", "EcoSport", "Endeavour", "Escort", "Falcon", "Fiesta", "Fiesta Classic", "Figo", "Freestyle", "Ikon", "Monde", "Mustang", "Raptor", "Fusion"],
+    "HM": ["Ambassodor", "Contessa"],
+    "Honda": ["Elevate", "City", "Amaze", "City H ev", "WR V"],
+    "Hummer": ["Hummer H2", "Hummer H3"],
+    "Hyundai": ["Elantra", "Sonata", "Azers", "Accent", "i20", "i10", "Creta", "Venue", "Alcazar", "Verna", "Exter", "Aura", "Tucson", "Kona E", "IONIQ"],
+    "Isuzu": ["D-Max", "V-Cross", "MU-X", "S-CAB", "S-CAB Z"],
+    "Jaguar": ["F Type", "F Pace", "I Pace"],
+    "Jeep": ["Compass", "Wrangler", "Meridian", "Grand Cherokee", "Avenger", "Sub 4 SUV"],
+    "KIA": ["Sonet", "Seltos", "Ev6", "Carens", "Carnival", "EV9", "EV6", "EV5", "Seltos EV"],
+    "Lamborghini": ["Urus", "Revuelto", "Hurucan"],
+    "Land Rover": ["Defender", "Rover", "Rover Velar", "Evoque", "Rover Sport", "Discovery", "Sport", "EV"],
+    "Lexus": ["ES", "LM", "LC500H", "LS", "NX", "LX", "RX"],
+    "Mahindra": ["Thar", "Thar ROXX", "Scorpio", "Bolero", "XUV700", "Scorpio N", "XUV 500", "XUV3XO", "Bolero Neo", "XUV400EV", "Bolero Camper", "Bolero Neo Plus", "Thar E"],
+    "Maruti Suzuki": ["Swift", "Brezza", "Fronxx", "Ertiga", "Dzire", "Baleno", "Wagon R", "Alto 800", "Alto K10", "Celerio", "Eeco", "Jimny", "XL6", "Ignis", "S-Presso", "Ciaz", "Invicto", "Ertiga Tour", "Eeco Cargo", "Grand Vitara", "Swift Dzire"],
+    "Maserati": ["Lavante", "Ghibli", "Gran Turismo", "Grecale", "Quattroporte", "Grancabrio"],
+    "Mercedes": ["GLA", "E Class", "GLS", "Maybach GLS", "C Class", "EQS", "EQS SUV", "S Class", "Maybach EQS", "EQB", "AMG GLE 53", "GLE", "EQE SUV", "AMG C43", "AMG GLC 43", "AMG A 45S", "Maybach S Class", "EQA", "GLB", "G Class", "CLE Cabriolet", "A Class Limousine", "AMG SL", "AMG E 53 Cabriolet", "AMG EQS", "AMG GLA 35", "AMG GT 4 Door", "AMG S63"],
+    "MG": ["Windsor", "Hector", "Comet EV", "Astor", "ZS EV", "Gloster", "Hector Plus"],
+    "Mini": ["Cooper"],
+    "Mitsubishi": ["Lancer"],
+    "Nissan": ["Magnite", "X Trial"],
+    "Opel": ["Astra", "Vectra", "Corsa"],
+    "Porsche": ["911", "Cayene", "Macan", "Taycan", "Panamera", "718", "Macan EV", "Cayenne Coupe"],
+    "Premier": ["Padmini", "118NE", "138 D", "Rio"],
+    "Renault": ["KWID", "Triber", "Kiger"],
+    "Rolls-Royce": ["Phantom", "Ghost", "Cullinan", "Spectre"],
+    "Skoda": ["Slavia", "Kushaq", "Superb", "Kodiaq"],
+    "Tata": ["Nexon", "Curvv", "Punch", "Tiago", "Harrier", "Altroz", "Safari", "Curvv EV", "Nexon EV", "Punch EV", "Tigor", "Tigor EV", "Altroz Racer", "Tiago NRG"],
+    "Toyota": ["Fortuner", "Innova Crysta", "Land Cruiser 300", "Urban Cruiser Hyryder", "Hilux", "Taisor", "Camry", "Vellfire", "Rumion", "Fortuner Legender", "Glanza", "Innova Hycross"],
+    "Volkswagen": ["Vitrus", "Taigun", "Tiguan"],
+    "Volvo": ["XC90", "XC60", "S90", "C40"]
+};
+
     
             function updateModels() {
                 const brandSelect = document.getElementById('brand');
