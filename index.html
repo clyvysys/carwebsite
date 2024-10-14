@@ -5,8 +5,8 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <title>Auto Serve | Home </title>
         <meta name="author" content="Angfuzsoft" />
-        <meta name="description" content="Malen - Car Repair and Services HTML Template" />
-        <meta name="keywords" content="Malen - Car Repair and Services HTML Template" />
+        <meta name="description" content="Auto Serve" />
+        <meta name="keywords" content="Auto Serve" />
         <meta name="robots" content="INDEX,FOLLOW" />
         <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
         <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-icon-57x57.png" />
@@ -887,6 +887,43 @@
         <script src="assets/js/nice-select.min.js"></script>
         <script src="assets/js/wow.min.js"></script>
         <script src="assets/js/main.js"></script>
+        <script>
+            const carData = {
+                "Aston Martin": ["DBX", "Vantage", "Rapide", "Vanquish", "DB9", "DB11", "DB12"],
+                "Audi": ["Q3", "Q5", "Q7", "A4", "A6", "RS5", "Q8", "A8 L", "RS Q8", "RS5"],
+                "Bently": ["Mulsanne", "Continental", "Flying Spur", "Bentayga"],
+                "BMW": ["XM", "X7", "X1", "X5", "i4", "i7", "M4CS", "7 Series", "2 Series", "M4", "3 Series Gran Limousine", "M340i", "Z4", "M2", "X3", "6 Series", "M8", "iX1", "X4M40i", "iX", "X3M40i", "i5", "New X3"],
+                "BYD": ["SEAL", "ATTO 3", "E6"],
+                "Chevrolet": ["Aveo", "UVA", "BEAT", "CAPTIVA", "CORVETTE", "CRUZE", "ENJOY", "FORESTER", "OPTRA", "OPTRA MAGNUM", "OPTRA SRV", "SAIL", "SILVERADO", "SPARK", "TAVERA", "TRAIL BLAZER", "IMPALA", "CAMARO"],
+                "Citrogen": ["Basalt", "C3", "Aircross", "eC3", "C5 Aircross", "C5"],
+                "Daewoo": ["Cielo", "Matiz", "Nexia"],
+                "Datsun": ["Go", "Go Plus", "redi Go", "Go+"],
+                "DC": ["Avanti"],
+                "Ferrari": ["296 GTB", "SF90", "812", "Roma", "Tributo", "Purosangue SUV", "F8 Tributo", "Portofino"],
+                "Fiat": ["1100", "500", "Avventura", "Avventura Cross", "Punto", "Linea", "Linea classic", "Millicento", "Palio", "Palio D", "Palio NV", "Stile", "Petra", "Petra D", "Premier Padmini", "Abart Punto", "EVO", "Pure", "Siena", "Uno"],
+                "Force": ["Gurkha", "Urbania", "Trax"],
+                "Ford": ["Ford Aspire", "Ford EcoSport", "Ford Endeavour", "Ford Escort", "Ford Falcon", "Ford Fiesta", "Ford Fiesta Classic", "Ford Figo", "Ford Freestyle", "Ford Ikon", "Ford Monde", "Ford Mustang", "raptor", "Fusion"],
+                // Add more brands and models here...
+            };
+    
+            function updateModels() {
+                const brandSelect = document.getElementById('brand');
+                const modelSelect = document.getElementById('model');
+                const selectedBrand = brandSelect.value;
+    
+                // Clear previous models
+                modelSelect.innerHTML = '';
+    
+                if (selectedBrand in carData) {
+                    carData[selectedBrand].forEach(model => {
+                        const option = document.createElement('option');
+                        option.value = model;
+                        option.text = model;
+                        modelSelect.appendChild(option);
+                    });
+                }
+            }
+        </script>
         <!--Start of Tawk.to Script-->
 <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
