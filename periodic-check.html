@@ -140,6 +140,76 @@
                 </div>
             </div>
         </header>
+        <div id="QuickView" class="white-popup mfp-hide">
+            <div class="container bg-white">
+                <div class="row gx-60">
+                   
+                    <div class="col-lg-12 align-self-center">
+                        <div class="product-about">
+                            <form action="/submit-service" method="POST">
+                                <h5>Select Service Type</h5>
+                                <label for="serviceType">Service Type:</label>
+                                <select name="serviceType" id="serviceType" required>
+                                  <option value="standard">Standard Service - Every 5,000 to 7,500 Miles / 6 Months</option>
+                                  <option value="basic">Basic Service - Every 15,000 Miles / 12 Months</option>
+                                  <option value="comprehensive">Comprehensive Service - Every 30,000 Miles / 24 Months</option>
+                                </select>
+                              
+                                <h5>Service Details</h5>
+                              
+                                <div id="standardService" class="serviceDetails">
+                                  <h5>Standard Service (Every 5,000 to 7,500 Miles / 6 Months)</h5>
+                                  <ul>
+                                    <li>Oil and Oil Filter Change</li>
+                                    <li>Fluid Level Check and Top-Up</li>
+                                    <li>Brake Inspection</li>
+                                    <li>Battery Check</li>
+                                    <li>Air Filter Inspection</li>
+                                    <li>Belt and Hose Check</li>
+                                  </ul>
+                                </div>
+                              
+                                <div id="basicService" class="serviceDetails" style="display:none;">
+                                  <h3>Basic Service (Every 15,000 Miles / 12 Months)</h3>
+                                  <ul>
+                                    <li>All items from the 5,000-mile service</li>
+                                    <li>Cabin Air Filter Replacement</li>
+                                    <li>Brake Fluid Replacement (if needed)</li>
+                                    <li>Exhaust System Inspection</li>
+                                  </ul>
+                                </div>
+                              
+                                <div id="comprehensiveService" class="serviceDetails" style="display:none;">
+                                  <h3>Comprehensive Service (Every 30,000 Miles / 24 Months)</h3>
+                                  <ul>
+                                    <li>All items from the 15,000-mile service</li>
+                                    <li>Engine Air Filter Replacement</li>
+                                    <li>Spark Plug Replacement (if needed)</li>
+                                    <li>Coolant Flush and Replacement</li>
+                                    <li>Fuel Filter Replacement (if applicable)</li>
+                                    <li>Transmission Fluid Change (if required)</li>
+                                  </ul>
+                                </div>
+                              
+                                <h6>Customer Information</h6>
+                                <label for="name">Name:</label>
+                                <input type="text" name="name" id="name" required>
+                              
+                                <label for="phone">Phone:</label>
+                                <input type="tel" name="phone" id="phone" required>
+                              
+                                <label for="email">Email:</label>
+                                <input type="email" name="email" id="email" required>
+                              
+                                <button type="submit">Submit</button>
+                              </form>
+                        </div>
+                    </div>
+                </div>
+                <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+            </div>
+        </div>
+        
         <div class="breadcumb-wrapper" data-bg-src="assets/img/breadcumb/breadcumb-bg.jpg">
             <div class="container">
                 <div class="breadcumb-content">
@@ -166,6 +236,9 @@
                                 <h2 class="sec-title text-white">Maintenance services</h2>
                             </div>
                         </div>
+                        <div class="col-auto" id="purchase">
+                           <a class="icon-btn popup-content th-btn style2 "  href="#QuickView">Purchase</a>
+                        </div>
                         
                     </div>
                     <div class="row gy-4">
@@ -176,7 +249,9 @@
                                     <div class="price-box_content">
                                         <div class="price-box_header">
                                             <h3 class="price-box_title">Standard Service</h3>
-                                            <a href="#" >  <a class="th-btn ms-3" href="#appointment">Book Now</a>
+                                            <a href="#" >  <a class="th-btn ms-3" href="#purchase">Book Now</a>
+
+                                            <!-- <a a href="#QuickView" class="icon-btn popup-content">Book Now</a> -->
                                         </div>
                                         <div class="price-box_list">
                                             <p>Every 5,000 to 7,500 Miles / 6 Months
@@ -197,7 +272,7 @@
                                     <div class="price-box_content">
                                         <div class="price-box_header">
                                             <h3 class="price-box_title">Basic Service</h3>
-                                            <a href="#" >  <a class="th-btn ms-3" href="#appointment">Book Now</a>
+                                            <a href="#" >  <a class="th-btn ms-3" href="#purchase">Book Now</a>
                                         </div>
                                         <div class="price-box_list">
                                             <p>Every 15,000 Miles / 12 Months
@@ -217,7 +292,7 @@
                                     <div class="price-box_content">
                                         <div class="price-box_header">
                                             <h3 class="price-box_title">Comprehensive Service</h3>
-                                            <a href="#" >  <a class="th-btn ms-3" href="#appointment">Book Now</a>
+                                            <a href="#" >  <a class="th-btn ms-3" href="#purchase">Book Now</a>
                                         </div>
                                         <div class="price-box_list">
                                             <p>Every 30,000 Miles / 24 Months
@@ -368,6 +443,30 @@
         <script src="assets/js/nice-select.min.js"></script>
         <script src="assets/js/wow.min.js"></script>
         <script src="assets/js/main.js"></script>
+        <script>
+            const serviceTypeSelect = document.getElementById('serviceType');
+            const standardService = document.getElementById('standardService');
+            const basicService = document.getElementById('basicService');
+            const comprehensiveService = document.getElementById('comprehensiveService');
+          
+            serviceTypeSelect.addEventListener('change', function () {
+              const selectedService = serviceTypeSelect.value;
+          
+              // Hide all service details
+              standardService.style.display = 'none';
+              basicService.style.display = 'none';
+              comprehensiveService.style.display = 'none';
+          
+              // Show the selected service details
+              if (selectedService === 'standard') {
+                standardService.style.display = 'block';
+              } else if (selectedService === 'basic') {
+                basicService.style.display = 'block';
+              } else if (selectedService === 'comprehensive') {
+                comprehensiveService.style.display = 'block';
+              }
+            });
+          </script>
         <script>
             const carData = {
     "Aston Martin": ["DBX", "Vantage", "Rapide", "Vanquish", "DB9", "DB11", "DB12"],
