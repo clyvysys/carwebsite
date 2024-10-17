@@ -32722,4 +32722,22 @@ hr.style1 {
         margin-right: 0;
     }
 }
+.custom-btn {
+    display: inline-block;      /* Ensures button is treated as a block element for consistent sizing */
+    padding: 10px 20px;         /* Adjusted padding to keep text inside */
+    font-size: 16px;            /* Set font size */
+    color: #fff;                /* Button text color */
+    background-color: #FF6347;  /* Tomato background color */
+    border-radius: 25px;        /* Rounded corners */
+    text-align: center;         /* Center the text */
+    white-space: nowrap;        /* Prevents text from wrapping */
+    text-decoration: none;      /* Removes the underline from the link */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: all 0.3s ease;  /* Smooth transition for hover effects */
+}
+
+.custom-btn:hover {
+    background-color: #e55347;  /* Darken on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
 
