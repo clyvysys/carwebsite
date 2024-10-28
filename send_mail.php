@@ -1,49 +1,54 @@
 <?php
+// Include PHPMailer autoload (make sure you installed PHPMailer using composer)
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// Load Composer's autoloader
-require 'vendor/autoload.php';
+require 'vendor/autoload.php'; // Make sure this points to your vendor/autoload.php file from composer
 
+// Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
-    $phone = $_POST['phone'];
-    $brand = $_POST['brand'];
-    $car_model = $_POST['car-model'];
+    // Retrieve form data safely
+    $name = isset($_POST['name']) ? htmlspecialchars($_POST['name']) : 'Not provided';
+    $phone = isset($_POST['phone']) ? htmlspecialchars($_POST['phone']) : 'Not provided';
+    $brand = isset($_POST['brand']) ? htmlspecialchars($_POST['brand']) : 'Not provided';
+    $carModel = isset($_POST['car-model']) ? htmlspecialchars($_POST['car-model']) : 'Not provided';
 
-    // Create a new PHPMailer instance
+    // Email content
+    $emailSubject = "Service Booking from $name";
+    $emailBody = "Name: $name\nPhone: $phone\nBrand: $brand\nCar Model: $carModel";
+
+    // Setup PHPMailer
     $mail = new PHPMailer(true);
 
     try {
-        // SMTP configuration
+        // SMTP settings
         $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';
-        $mail->SMTPAuth = true;
-        $mail->Username = 'tumkuraejaz@gmail.com'; // Your Gmail address
-        $mail->Password = 'imuz uqyt lxuq zhxk'; // Your Gmail app password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port = 587;
+        $mail->Host       = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'tumkuraejaz@gmail.com'; // Your Gmail address
+        $mail->Password   = 'imuz uqyt lxuq zhxk';   // Your Gmail app password (not the regular password)
+        $mail->SMTPSecure = 'tls';    // Enable TLS encryption, `ssl` also accepted
+        $mail->Port       = 587;
 
-        // Recipients
-        $mail->setFrom('tumkuraejaz@gmail.com', 'Aejaz'); // Your Gmail address and name
-        $mail->addAddress('tumkuraejaz@gmail.com'); // Add a recipient's email
+        // Sender and recipient settings
+        $mail->setFrom('tumkuraejaz@gmail.com', 'Aejaz'); // Your email and name
+        $mail->addAddress('tumkuraejaz@gmail.com');    // Add a recipient
 
-        // Content
-        $mail->isHTML(true);
-        $mail->Subject = 'New Service Booking';
-        $mail->Body    = "<h1>New Service Booking</h1>
-                          <p><strong>Name:</strong> $name</p>
-                          <p><strong>Phone:</strong> $phone</p>
-                          <p><strong>Brand:</strong> $brand</p>
-                          <p><strong>Car Model:</strong> $car_model</p>";
+        // Email content settings
+        $mail->isHTML(false); // Set email format to plain text
+        $mail->Subject = $emailSubject;
+        $mail->Body    = $emailBody;
 
-        // Send the email
-        $mail->send();
-        echo 'Message has been sent';
+        // Send email
+        if ($mail->send()) {
+            echo "Message has been sent successfully.";
+        } else {
+            echo "Message could not be sent.";
+        }
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 } else {
-    echo "Invalid request method.";
+    echo "No form data received.";
 }
 ?>

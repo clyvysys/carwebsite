@@ -2285,7 +2285,7 @@ textarea.is-invalid {
     top: 0;
     width: 150%;
     height: 100%;
-    background-color: var(--title-color);
+    /* background-color: var(--title-color); */
     color: var(--white-color);
     -webkit-transform: skew(30deg) translate3d(0, 0, 0);
     transform: skew(30deg) translate3d(0, 0, 0);
@@ -2310,7 +2310,7 @@ textarea.is-invalid {
     top: 0;
     width: 150%;
     height: 100%;
-    background-color: var(--title-color);
+    /* background-color: var(--title-color); */
     -webkit-transform: skew(30deg) translate3d(0, 0, 0);
     transform: skew(30deg) translate3d(0, 0, 0);
     -webkit-transform-origin: 0 0;
@@ -29004,7 +29004,7 @@ hr.style1 {
 }
 .header-layout7 .header-top {
     --body-color: #fff;
-    background-color: var(--title-color);
+    background-color: gray;
     padding: 11px 0;
 }
 .header-layout7 .header-top .container {
@@ -31439,7 +31439,7 @@ hr.style1 {
     --space: 40px;
 }
 .price-item_header {
-    background-color: var(--title-color);
+    background-color: var(--theme-color);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     padding: var(--space);
     -webkit-transition: 0.4s ease-in-out;
@@ -31498,7 +31498,7 @@ hr.style1 {
     color: var(--title-color);
 }
 .price-item:not(:hover) .th-btn {
-    background-color: var(--title-color);
+    /* background-color: var(--title-color); */
 }
 .price-item:not(:hover) .th-btn:before,
 .price-item:not(:hover) .th-btn:after {
